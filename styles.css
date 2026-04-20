@@ -10,79 +10,78 @@ body {
     color: #333;
 }
 
+/* Learning: Navbar styling using display properties for separate alignment */
 .navbar {
     background-color: #f8f9fa;
     padding: 1rem 2rem;
     border-bottom: 1px solid #e9ecef;
+    text-align: center;
+    line-height: 2.5;
     position: relative;
-    height: 60px;
 }
 
+/* Learning: Logo using inline-block positioned absolutely on left */
 .logo {
     display: inline-block;
     font-weight: bold;
     font-size: 1.5rem;
-    color: #007bff;
+    color: black;
+    vertical-align: middle;
     position: absolute;
     left: 2rem;
     top: 50%;
     transform: translateY(-50%);
 }
 
+/* Learning: Nav links container using inline-block */
 .nav-links {
     display: inline-block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    vertical-align: middle;
 }
 
+/* Learning: Individual nav links as inline elements */
 .nav-links a {
+    display: inline-block;
     text-decoration: none;
     color: #333;
     margin: 0 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    /* Learning: Simple hover effect without transitions */
 }
 
 .nav-links a:hover {
     color: #007bff;
 }
 
+/* Learning: Username using inline-block positioned absolutely on right */
 .username {
     display: inline-block;
     background-color: #e3f2fd;
     color: #1976d2;
     padding: 0.5rem 1rem;
     border-radius: 20px;
+    vertical-align: middle;
+    font-weight: 500;
     position: absolute;
     right: 2rem;
     top: 50%;
     transform: translateY(-50%);
-    font-weight: 500;
 }
 
 main {
-    height: calc(100vh - 60px);
+    min-height: calc(100vh - 80px);
 }
 
 .hero {
-    display: flex;
     width: 100%;
     max-width: 1440px;
-    align-items: center;
-    justify-content: center;
     margin: 0 auto;
     padding: 2rem;
-    height: calc(100vh - 70px);
 }
 
 .hero-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    float: left;
+    width: 50%;
     padding-right: 2rem;
 }
 
@@ -102,7 +101,6 @@ main {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     color: #555;
-    max-width: 600px;
 }
 
 .cta-button {
@@ -113,69 +111,21 @@ main {
     font-size: 1.1rem;
     border-radius: 20px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    max-width: 250px;
+    display: inline-block;
 }
 
 .cta-button:hover {
     background-color: #0056b3;
-    transform: translateY(-2px);
 }
 
 .hero-right {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    float: right;
+    width: 50%;
+    text-align: center;
 }
 
 .hero-right img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-    }
-    
-    .logo {
-        left: 1rem;
-        font-size: 1.2rem;
-    }
-    
-    .nav-links {
-        display: none;
-    }
-    
-    .username {
-        right: 1rem;
-        padding: 0.3rem 0.8rem;
-        font-size: 0.9rem;
-    }
-    
-    .hero {
-        flex-direction: column;
-        padding: 1rem;
-        text-align: center;
-    }
-    
-    .hero-left {
-        padding-right: 0;
-        margin-bottom: 2rem;
-    }
-    
-    .hero-left h1 {
-        font-size: 2rem;
-    }
-    
-    .hero-left p {
-        font-size: 1rem;
-    }
-    
-    .cta-button {
-        margin: 0 auto;
-    }
 }
