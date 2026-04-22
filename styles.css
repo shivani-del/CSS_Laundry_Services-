@@ -10,41 +10,34 @@ body {
     color: #333;
 }
 
-/* Learning: Navbar styling using display properties for separate alignment */
+/* Learning: Navbar styling using flexbox for responsive layout */
 .navbar {
     background-color: #f8f9fa;
     padding: 1rem 2rem;
     border-bottom: 1px solid #e9ecef;
-    text-align: center;
-    line-height: 2.5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
 }
 
-/* Learning: Logo using inline-block positioned absolutely on left */
+/* Learning: Logo using flexbox positioning */
 .logo {
-    display: inline-block;
     font-weight: bold;
     font-size: 1.5rem;
     color: black;
-    vertical-align: middle;
-    position: absolute;
-    left: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
-/* Learning: Nav links container using inline-block */
+/* Learning: Nav links container using flexbox */
 .nav-links {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    gap: 1rem;
 }
 
-/* Learning: Individual nav links as inline elements */
+/* Learning: Individual nav links as flex items */
 .nav-links a {
-    display: inline-block;
     text-decoration: none;
     color: #333;
-    margin: 0 1rem;
     font-weight: 500;
     /* Learning: Simple hover effect without transitions */
 }
@@ -53,36 +46,32 @@ body {
     color: #007bff;
 }
 
-/* Learning: Username using inline-block positioned absolutely on right */
+/* Learning: Username using flexbox positioning */
 .username {
-    display: inline-block;
     background-color: #e3f2fd;
     color: #1976d2;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    vertical-align: middle;
     font-weight: 500;
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 main {
     min-height: calc(100vh - 80px);
 }
 
+/* Learning: Hero section using flexbox for responsive layout */
 .hero {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
     padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 }
 
 .hero-left {
-    float: left;
-    width: 50%;
-    padding-right: 2rem;
+    flex: 1;
 }
 
 .hero-left h1 {
@@ -119,8 +108,7 @@ main {
 }
 
 .hero-right {
-    float: right;
-    width: 50%;
+    flex: 1;
     text-align: center;
 }
 
@@ -128,4 +116,91 @@ main {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+/* Tablet Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.75rem 1rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+    
+    .username {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .hero {
+        padding: 1.5rem;
+    }
+    
+    .hero-left h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-left p {
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .username {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .hero {
+        flex-direction: column-reverse;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .hero-left {
+        text-align: center;
+        order: 2;
+    }
+    
+    .hero-right {
+        order: 1;
+    }
+    
+    .hero-left h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    .hero-left p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
 }

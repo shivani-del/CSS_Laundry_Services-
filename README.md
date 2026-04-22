@@ -1,27 +1,34 @@
 # Laundry Services
 
-A simple laundry services website built with fundamental CSS concepts.
+A responsive laundry services website built with modern CSS flexbox and media queries.
 
 ## What I Learned
 
-This project was a great learning experience for understanding core CSS concepts that I was struggling with:
+This project demonstrates responsive web design using CSS flexbox and media queries:
 
-### Display Properties
-- **display: inline** - Elements sit side by side but can't have width/height set
-- **display: inline-block** - Best of both worlds - sits inline but accepts dimensions
-- **display: block** - Takes full width, starts on new line
+### Flexbox Layout
+- **display: flex** - Creates flexible container layouts
+- **justify-content: space-between** - Distributes items evenly in navbar
+- **flex-direction: column-reverse** - Stacks items vertically in reverse order on mobile
+- **gap: 2rem** - Creates consistent spacing between flex items
+
+### Responsive Design
+- **Media Queries** - Breakpoints for tablet (≤768px) and mobile (≤480px)
+- **Mobile-first approach** - Progressive enhancement from larger to smaller screens
+- **Flexible typography** - Font sizes scale appropriately across devices
 
 ### Challenges I Faced
 
-1. **Navbar alignment**: Initially tried complex positioning, then learned `inline-block` with `vertical-align` works better
-2. **Two-column layout**: Wanted to use flexbox but assignment required float - learned float is actually useful for simple layouts
-3. **Responsive design**: Had to rethink how inline elements behave on mobile vs desktop
+1. **Navbar responsiveness**: Successfully converted from inline-block to flexbox for better mobile handling
+2. **Hero section layout**: Transitioned from float-based two-column to flexible flexbox layout
+3. **Mobile reordering**: Used `flex-direction: column-reverse` to place image above text on mobile
+4. **Responsive typography**: Implemented scalable font sizes that work across all devices
 
 ## Project Structure
 
 Laundry_Services/
-|-- index.html          # Simple HTML with learning comments
-|-- styles.css          # CSS using display, float, and basic positioning
-|-- README.md           # This documentation
+|-- index.html          # HTML structure for responsive laundry services website
+|-- styles.css          # CSS with flexbox layout and responsive media queries
+|-- README.md           # Documentation of responsive design implementation
 
 
