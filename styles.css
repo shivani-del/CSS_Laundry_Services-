@@ -10,7 +10,7 @@ body {
     color: #333;
 }
 
-/* Learning: Navbar styling using flexbox for responsive layout */
+/* Navbar styling using flexbox for responsive layout */
 .navbar {
     background-color: #f8f9fa;
     padding: 1rem 2rem;
@@ -21,32 +21,32 @@ body {
     position: relative;
 }
 
-/* Learning: Logo using flexbox positioning */
+/* Logo using flexbox positioning */
 .logo {
     font-weight: bold;
     font-size: 1.5rem;
     color: black;
 }
 
-/* Learning: Nav links container using flexbox */
+/* Nav links container using flexbox */
 .nav-links {
     display: flex;
     gap: 1rem;
 }
 
-/* Learning: Individual nav links as flex items */
+/* Individual nav links as flex items */
 .nav-links a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    /* Learning: Simple hover effect without transitions */
+    /* Simple hover effect without transitions */
 }
 
 .nav-links a:hover {
     color: #007bff;
 }
 
-/* Learning: Username using flexbox positioning */
+/* Username using flexbox positioning */
 .username {
     background-color: #e3f2fd;
     color: #1976d2;
@@ -112,7 +112,7 @@ main {
     min-height: calc(100vh - 80px);
 }
 
-/* Learning: Hero section using flexbox for responsive layout */
+/* Hero section using flexbox for responsive layout */
 .hero {
     width: 100%;
     max-width: 1440px;
