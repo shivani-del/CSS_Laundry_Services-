@@ -1,3 +1,24 @@
+/* CSS Variables for consistent theming */
+:root {
+    /* Colors */
+    --primary-blue: #007bff;
+    --primary-blue-hover: #0056b3;
+    --text-dark: #333;
+    --text-light: #555;
+    --bg-light: #f8f9fa;
+    --white: #fff;
+    --black: #000;
+    
+    /* Breakpoints */
+    --mobile-breakpoint: 480px;
+    --tablet-breakpoint: 768px;
+    
+    /* Spacing */
+    --nav-height-desktop: 70px;
+    --nav-height-tablet: 60px;
+    --nav-height-mobile: 50px;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -8,14 +29,14 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
     overflow-x: hidden;
 }
 
 /* Navbar Styles */
 .navbar {
-    background: #fff;
+    background: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -29,13 +50,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
+    height: var(--nav-height-desktop);
 }
 
 .nav-logo h1 {
     font-size: 24px;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--text-dark);
 }
 
 .nav-menu {
@@ -52,19 +73,19 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: #555;
+    color: var(--text-light);
     font-weight: 500;
     font-size: 16px;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #007bff;
+    color: var(--primary-blue);
 }
 
 .nav-user .user-btn {
-    background: #007bff;
-    color: white;
+    background: var(--primary-blue);
+    color: var(--white);
     border: none;
     padding: 10px 20px;
     border-radius: 6px;
@@ -75,7 +96,7 @@ body {
 }
 
 .nav-user .user-btn:hover {
-    background: #0056b3;
+    background: var(--primary-blue-hover);
 }
 
 /* Hamburger Menu Styles */
@@ -94,7 +115,7 @@ body {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: #333;
+    background-color: var(--text-dark);
     transition: all 0.3s ease;
     position: absolute;
     left: 0;
@@ -146,11 +167,11 @@ body {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 24px;
-    color: black;
+    color: var(--text-dark);
 }
 
 .hero-title .highlight {
-    color: #007bff;
+    color: var(--primary-blue);
     display: block;
 }
 
@@ -159,12 +180,12 @@ body {
     line-height: 1.6;
     margin-bottom: 32px;
     opacity: 0.9;
-    color: #555;
+    color: var(--text-light);
 }
 
 .cta-button {
-    background: #007bff;
-    color: white;
+    background: var(--primary-blue);
+    color: var(--white);
     border: none;
     padding: 16px 32px;
     font-size: 18px;
@@ -176,7 +197,7 @@ body {
 }
 
 .cta-button:hover {
-    background: #0056b3;
+    background: var(--primary-blue-hover);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
 }
@@ -195,9 +216,10 @@ body {
 }
 
 /* Tablet Responsive Styles */
+/* Tablet breakpoint: 481-768px - reduced text sizes, flexible layout */
 @media (max-width: 768px) {
     .nav-container {
-        height: 60px;
+        height: var(--nav-height-tablet);
         padding: 0 15px;
     }
     
@@ -250,39 +272,13 @@ body {
         font-size: 16px;
         padding: 14px 28px;
     }
-    
-    .washing-machine-illustration {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .machine-body {
-        width: 140px;
-        height: 180px;
-        left: 30px;
-        top: 10px;
-    }
-    
-    .machine-door {
-        width: 100px;
-        height: 100px;
-        left: 20px;
-        top: 30px;
-        border-width: 5px;
-    }
-    
-    .machine-drum {
-        width: 60px;
-        height: 60px;
-        left: 20px;
-        top: 20px;
-    }
 }
 
 /* Mobile Responsive Styles */
+/* Mobile breakpoint: 480px and below - single column layout */
 @media (max-width: 480px) {
     .nav-container {
-        height: 50px;
+        height: var(--nav-height-mobile);
         padding: 0 10px;
     }
     
@@ -300,7 +296,7 @@ body {
         right: 0;
         width: 280px;
         height: 100vh;
-        background: black;
+        background: var(--black);
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
         transform: translateX(100%);
         transition: transform 0.3s ease;
@@ -319,7 +315,7 @@ body {
     .nav-link {
         display: block;
         font-size: 18px;
-        color: white;
+        color: var(--white);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
@@ -346,7 +342,7 @@ body {
     }
     
     .hero-container {
-        flex-direction: column-reverse;
+        flex-direction: column;
         gap: 20px;
         text-align: center;
         align-items: center;
@@ -374,46 +370,5 @@ body {
     .cta-button {
         font-size: 14px;
         padding: 12px 24px;
-    }
-    
-    .washing-machine-illustration {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .machine-body {
-        width: 100px;
-        height: 130px;
-        left: 25px;
-        top: 10px;
-    }
-    
-    .machine-door {
-        width: 70px;
-        height: 70px;
-        left: 15px;
-        top: 20px;
-        border-width: 4px;
-    }
-    
-    .machine-drum {
-        width: 40px;
-        height: 40px;
-        left: 15px;
-        top: 15px;
-    }
-    
-    .bucket {
-        width: 35px;
-        height: 40px;
-        left: 5px;
-        top: 90px;
-    }
-    
-    .cloth {
-        width: 45px;
-        height: 35px;
-        left: 110px;
-        top: 100px;
     }
 }
