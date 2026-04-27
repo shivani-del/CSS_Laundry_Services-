@@ -76,7 +76,6 @@ body {
 
 /* Mobile Menu Styles */
 .mobile-menu {
-    display: none;
     position: fixed;
     top: 0;
     right: -300px;
@@ -86,6 +85,9 @@ body {
     transition: right 0.3s ease-in-out;
     z-index: 1000;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .mobile-menu a {
@@ -103,9 +105,8 @@ body {
 }
 
 /* Show mobile menu when hamburger button is focused */
-.hamburger-menu:focus .mobile-menu {
+.hamburger-menu:focus ~ .mobile-menu {
     right: 0;
-    display: flex;
 }
 
 main {
