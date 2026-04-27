@@ -8,11 +8,11 @@
     --bg-light: #f8f9fa;
     --white: #fff;
     --black: #000;
-    
+
     /* Breakpoints */
     --mobile-breakpoint: 480px;
     --tablet-breakpoint: 768px;
-    
+
     /* Spacing */
     --nav-height-desktop: 70px;
     --nav-height-tablet: 60px;
@@ -215,81 +215,88 @@ body {
     border-radius: 12px;
 }
 
-/* Tablet Responsive Styles */
-/* Tablet breakpoint: 481-768px - reduced text sizes, flexible layout */
+/* 
+   Tablets and smaller desktops (max-width: 768px)
+   Logic: Keep the side-by-side layout but reduce font sizes and padding 
+   to fit the smaller screen. We don't want to stack yet because there's 
+   still enough horizontal space.
+*/
 @media (max-width: 768px) {
     .nav-container {
         height: var(--nav-height-tablet);
         padding: 0 15px;
     }
-    
+
     .nav-logo h1 {
         font-size: 20px;
     }
-    
+
     .nav-list {
         gap: 16px;
     }
-    
+
     .nav-link {
         font-size: 14px;
     }
-    
+
     .nav-user .user-btn {
         font-size: 12px;
         padding: 8px 16px;
     }
-    
+
     .hero {
         padding: 60px 15px;
         min-height: 500px;
     }
-    
+
     .hero-container {
         gap: 30px;
-        flex-wrap: wrap;
+        /* Removed flex-wrap: wrap to keep side-by-side layout */
     }
-    
+
     .hero-content {
-        flex: 1 1 100%;
-        text-align: center;
+        flex: 1;
+        /* Removed text-align: center to maintain standard alignment */
     }
-    
+
     .hero-image {
-        flex: 1 1 100%;
+        flex: 1;
         justify-content: center;
     }
-    
+
     .hero-title {
         font-size: 32px;
     }
-    
+
     .hero-description {
         font-size: 16px;
     }
-    
+
     .cta-button {
         font-size: 16px;
         padding: 14px 28px;
     }
 }
 
-/* Mobile Responsive Styles */
-/* Mobile breakpoint: 480px and below - single column layout */
+/* 
+   Mobile devices (max-width: 480px)
+   Logic: Stack everything vertically. The screen is too narrow for 
+   side-by-side content. We also show the hamburger menu here.
+*/
 @media (max-width: 480px) {
     .nav-container {
         height: var(--nav-height-mobile);
         padding: 0 10px;
     }
-    
+
     .nav-logo h1 {
         font-size: 18px;
     }
-    
+
     .hamburger-btn {
         display: block;
     }
-    
+
     .nav-menu {
         position: fixed;
         top: 0;
@@ -302,27 +309,27 @@ body {
         transition: transform 0.3s ease;
         z-index: 1000;
     }
-    
+
     .nav-list {
         flex-direction: column;
         gap: 0;
     }
-    
+
     .nav-list li {
         margin: 10px 0;
     }
-    
+
     .nav-link {
         display: block;
         font-size: 18px;
         color: var(--white);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .nav-link:hover {
         color: #3498db;
     }
-    
+
     /* Show menu when JavaScript adds menu-open class */
     .nav-menu.menu-open {
         transform: translateX(0);
@@ -330,43 +337,44 @@ body {
         align-items: center;
         justify-content: center;
     }
-    
+
     .nav-user .user-btn {
         font-size: 11px;
         padding: 6px 12px;
     }
-    
+
     .hero {
         padding: 30px 10px;
         min-height: auto;
     }
-    
+
     .hero-container {
         flex-direction: column;
         gap: 20px;
         text-align: center;
         align-items: center;
     }
+
     .hero-content {
         order: 2;
     }
-    
+
     .hero-image {
         order: 1;
         max-width: 280px;
         width: 100%;
     }
-    
+
     .hero-title {
         font-size: 24px;
         line-height: 1.3;
     }
-    
+
     .hero-description {
         font-size: 14px;
         margin-bottom: 20px;
     }
-    
+
     .cta-button {
         font-size: 14px;
         padding: 12px 24px;
