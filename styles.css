@@ -53,6 +53,10 @@ body {
     height: var(--nav-height-desktop);
 }
 
+.nav-logo {
+    order: 1;
+}
+
 .nav-logo h1 {
     font-size: 24px;
     font-weight: 700;
@@ -63,6 +67,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
+    order: 2;
 }
 
 .nav-list {
@@ -138,6 +143,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
+    order: 3;
 }
 
 /* Hero Section Styles */
@@ -308,6 +314,7 @@ body {
         transform: translateX(100%);
         transition: transform 0.3s ease;
         z-index: 1000;
+        order: 4;
     }
 
     .nav-list {
@@ -330,12 +337,18 @@ body {
         color: #3498db;
     }
 
-    /* Show menu when JavaScript adds menu-open class */
-    .nav-menu.menu-open {
+    /* Show menu when button is focused */
+    .hamburger-btn:focus~.nav-menu {
         transform: translateX(0);
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    /* Optional: Show menu when interacting with the menu itself 
+       This prevents it from closing immediately when you click a link */
+    .nav-menu:focus-within {
+        transform: translateX(0);
     }
 
     .nav-user .user-btn {
