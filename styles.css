@@ -2,7 +2,7 @@
 :root {
     /* Colors */
     --primary-blue: #007bff;
-    --primary-blue-hover: #0056b3;
+    --primary-blue-hover: #007bff;
     --text-dark: #333;
     --text-light: #555;
     --bg-light: #f8f9fa;
@@ -205,7 +205,6 @@ body {
 .cta-button:hover {
     background: var(--primary-blue-hover);
     transform: translateY(-6px) rotate(-4deg) scale(1.05);
-    box-shadow: 0 12px 24px rgba(0, 123, 255, 0.4);
 }
 
 .hero-image {
