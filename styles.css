@@ -207,23 +207,36 @@ body {
     transform: translateY(-6px) rotate(-4deg) scale(1.05);
 }
 
+/*
+  My custom orbit-squeeze animation!
+  I built this up step-by-step:
+  1. First I just tried rotation: transform: rotate(360deg);
+  2. Then I added an orbit by combining rotate and translateX, with a reverse rotate to keep it facing mostly upright.
+  3. Finally, I added scale to give it a "squeeze" effect by slightly compressing/expanding the width/height.
+*/
 @keyframes orbit-squeeze {
+
+    /* 0%: Start at regular position and normal scale */
     0% {
         transform: rotate(0deg) translateX(20px) rotate(0deg) scale(1, 1);
     }
 
+    /* 25%: Quarter way around the orbit, squeeze slightly vertically */
     25% {
         transform: rotate(90deg) translateX(20px) rotate(-90deg) scale(0.95, 1.08);
     }
 
+    /* 50%: Halfway around, back to normal scale */
     50% {
         transform: rotate(180deg) translateX(20px) rotate(-180deg) scale(1, 1);
     }
 
+    /* 75%: Three-quarters around, squeeze horizontally */
     75% {
         transform: rotate(270deg) translateX(20px) rotate(-270deg) scale(1.08, 0.95);
     }
 
+    /* 100%: Full circle end, back to normal */
     100% {
         transform: rotate(360deg) translateX(20px) rotate(-360deg) scale(1, 1);
     }

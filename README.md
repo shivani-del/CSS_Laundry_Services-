@@ -17,7 +17,20 @@ I used the `:focus` pseudo-class to make the menu work. Here is how it works:
 This was a great way to learn about CSS selectors and how to create a menu without needing scripts.
 
 ### Interactive Animations
-To make the page feel more lively, I added a dynamic hover effect to the main "Book a service today!" Call-To-Action button. By combining `translateY`, `rotate`, and `scale` transformations with a custom `cubic-bezier` transition timing, the button pops up and tilts responsively when hovered! I also added a continuous `orbit-squeeze` keyframe animation to the hero image, giving it a captivating orbiting and squeezing visual effect.
+I really wanted to make the page feel more dynamic, so I dove deep into CSS animations!
+
+For the hero image, I created a custom `@keyframes` animation called `orbit-squeeze`. 
+Here's my process and what I learned:
+- **Starting Simple**: I began by just rotating the image `transform: rotate(360deg)`. It worked, but it just spun in place over and over.
+- **Adding the Orbit**: To make it move in a circle, I combined `rotate` with `translateX(20px)`, followed immediately by an opposite `rotate` so the image wouldn't just flip upside down. 
+- **The Squeeze**: I added `scale` changes at `25%` and `75%` to squish it slightly on the vertical then horizontal axes. 
+- **Keyframe Percentages (0%, 25%, 50%, 75%, 100%)**: I chose these even intervals so the animation has a smooth, steady rhythm. At `0%` and `100%`, it’s at its default scale `(1, 1)` and starts the loop seamlessly. The `50%` mark acts as a reset halfway through, maintaining balance before the horizontal squish at `75%`.
+
+**Testing Observations**:
+When testing in the browser, the image moves in a small continuous circle (the orbit), and smoothly squishes inward like a jelly depending on where it is in the orbit. 
+If I change the percentages (for instance, dropping the `50%` reset step or moving it to `80%`), the "squeeze" goes totally out of sync! The image either jerks suddenly or stays awkwardly compressed for way too long. The hardest part overall was wrapping my head around how the first `rotate` affects the axis of the `translateX`, which took a lot of trial and error to truly understand—but I eventually got it!
+
+I also added a dynamic hover effect to the main "Book a service today!" Call-To-Action button, combining `translateY`, `rotate`, and `scale` with a custom `cubic-bezier` transition timing to make it aggressively pop when you hover over it!
 
 ### Challenges
 - **Layout Order**: I had to move the button in my HTML so the CSS could find the menu.
