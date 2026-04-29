@@ -17,7 +17,7 @@ I used the `:focus` pseudo-class to make the menu work. Here is how it works:
 This was a great way to learn about CSS selectors and how to create a menu without needing scripts.
 
 ### Interactive Animations
-To make the page feel more lively, I added a dynamic hover effect to the main "Book a service today!" Call-To-Action button. By combining `translateY`, `rotate`, and `scale` transformations with a custom `cubic-bezier` transition timing, the button pops up and tilts responsively when hovered!
+To make the page feel more lively, I added a dynamic hover effect to the main "Book a service today!" Call-To-Action button. By combining `translateY`, `rotate`, and `scale` transformations with a custom `cubic-bezier` transition timing, the button pops up and tilts responsively when hovered! I also added a continuous `orbit-squeeze` keyframe animation to the hero image, giving it a captivating orbiting and squeezing visual effect.
 
 ### Challenges
 - **Layout Order**: I had to move the button in my HTML so the CSS could find the menu.
